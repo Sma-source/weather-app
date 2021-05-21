@@ -51,7 +51,14 @@ function App() {
     <div className="App warm">
       <main>
         <div className="search-box">
-          <input type="text" className="search-bar" placeholder="Search..." />
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search..."
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
+          />
         </div>
         <div className="location-box">
           <div className="location">Paris, FR</div>
