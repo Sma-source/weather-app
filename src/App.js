@@ -10,7 +10,11 @@ function App() {
         `${process.env.REACT_APP_BASE_URL}weather?q=${query}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`
       )
         .then((res) => res.json())
-        .then((result) => setWeather(result));
+        .then((result) => {
+          setWeather(result);
+          setQuery("");
+          console.log(result);
+        });
     }
   };
 
